@@ -1,4 +1,4 @@
-const { db } = require('@vercel/postgres');
+const { db } = require('config.js');
 const {
   invoices,
   customers,

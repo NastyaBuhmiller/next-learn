@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql } from 'data/config.js';
 import {
   CustomerField,
   CustomersTableType,

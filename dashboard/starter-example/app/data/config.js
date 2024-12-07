@@ -1,14 +1,12 @@
-const mysql = require('mysql');
-// Set database connection credentials
-const config = {
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'dvdrental',
-};
+const { Pool } = require('pg');
+require('dotenv').config();
 
-// Create a MySQL pool
-const pool = mysql.createPool(config);
+const pool = new Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+});
 
-// Export the pool
 module.exports = pool;
